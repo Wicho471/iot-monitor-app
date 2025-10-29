@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    min-height: 100vh;
+}
+
+.iot-window {
+    max-width: 1600px;
+    width: 95%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #dee2e6;
+    margin: auto;
+}
+
+.window-header {
+    background-color: #e9ecef;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.dot {
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background-color: #bbb;
+}
+.dot.red { background-color: #fd6a5e; }
+.dot.yellow { background-color: #fdbc40; }
+.dot.green { background-color: #34c84a; }
+
+.dot:not(.active) {
+    background-color: #d0d0d0;
+}
+
+.window-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+    margin-left: 0.5rem;
+}
+
+.window-body {
+    padding: 2rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .window-body {
+        padding: 2.5rem 3rem;
+    }
+}
+
+.websocket-controls,
+.data-section,
+.monitor-section {
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background-color: #fcfcfc;
+    height: 100%;
+}
+
+.data-list {
+    max-height: 400px;
+    overflow-y: auto;
+    font-size: 0.85rem;
+}
+
+.data-list .list-group-item {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid #eee;
+    border-radius: 0 !important;
+}
+
+.data-list .list-group-item:last-child {
+    border-bottom: none;
+}
+
+.data-list-time {
+    display: block;
+    font-size: 0.75rem;
+    color: #888;
+}
+
+.notification-panel {
+    background-color: #2b3035;
+    color: #f8f9fa;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.875rem;
+    height: 450px;
+    overflow-y: auto;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #444;
+}
+
+.log-entry {
+    padding: 0.25rem 0.5rem;
+    border-bottom: 1px solid #495057;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.log-entry.log-system {
+    color: #ffc107;
+    font-style: italic;
+}
+
+.log-entry.log-error {
+    color: #f17c7c;
+    font-weight: bold;
+}
+
+.log-entry.log-open {
+    color: #4dff91;
+    font-weight: bold;
+}
+
+.log-entry.log-close {
+    color: #ff9a70;
+}
+
+.log-entry.log-data-NUEVO_MOVIMIENTO {
+    color: #82cfff;
+}
+
+.log-entry.log-data-NUEVO_OBSTACULO {
+    color: #fcc28a;
+}
+
+.log-entry.log-data-SECUENCIA_COMPLETADA {
+    color: #a49eff;
+}
