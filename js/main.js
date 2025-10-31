@@ -5,7 +5,7 @@ import { DataManager } from './components/data.manager.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const API_BASE_URL = 'https://hjbe0v8t82.execute-api.us-east-1.amazonaws.com';
+    const API_BASE_URL = 'https://100.29.134.125:5500';
 
     const elements = {
         connectBtn: document.getElementById('btn-connect'),
