@@ -15,11 +15,22 @@ export class ApiService {
 
         try {
             const response = await fetch(url, config);
+            
             if (!response.ok) {
                 const errorText = await response.text();
-                throw new Error(`Error ${response.status}: ${errorText}`);
+                throw new Error(`HTTP Error ${response.status}: ${errorText}`);
             }
-            return response.json();
+
+            const jsonResponse = await response.json();
+
+            // Manejo de la nueva estructura ApiResponse { success, data, error }
+            if (jsonResponse.success === false) {
+                throw new Error(jsonResponse.error || 'Error reportado por la API');
+            }
+
+            // Retornamos directamente los datos (el arreglo)
+            return jsonResponse.data;
+
         } catch (error) {
             console.error(`Fallo en API: ${endpoint}`, error.message);
             throw error;
